@@ -24,6 +24,7 @@ helm:
   # Custom values that will be passed as values.yaml to the installation
   values:
     replicaCount: 2
+    cloudProvider: oci
 
 targetCustomizations:
   - name: prod
