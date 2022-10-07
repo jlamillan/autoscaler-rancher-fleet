@@ -7,6 +7,8 @@ spec:
   branch: master
   insecureSkipTLSVerify: false
   repo: https://github.com/jlamillan/autoscaler-rancher-fleet.git
+  paths:
+  - charts/cluster-autoscaler
   targets:
   - clusterSelector: {}
 type: fleet.cattle.io.gitrepo
