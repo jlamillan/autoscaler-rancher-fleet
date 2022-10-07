@@ -1,0 +1,12 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: cluster-autoscaler
+  namespace: kube-system
+spec:
+  branch: master
+  insecureSkipTLSVerify: false
+  repo: https://github.com/jlamillan/autoscaler-rancher-fleet.git
+  targets:
+  - clusterSelector: {}
+type: fleet.cattle.io.gitrepo

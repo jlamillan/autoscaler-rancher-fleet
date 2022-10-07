@@ -1,0 +1,43 @@
+namespace: kube-system
+
+# Custom helm options
+helm:
+  # The release name to use. If empty a generated release name will be used
+  releaseName: cluster-autoscaler
+
+  # The directory of the chart in the repo.
+  chart: "github.com/twingao/cluster-autoscaler"
+
+  # An https to a valid Helm repository to download the chart from
+  repo: ""
+
+  # Used if repo is set to look up the version of the chart
+  version: "master"
+
+  # Force recreate resource that can not be updated
+  force: false
+
+  # How long for helm to wait for the release to be active. If the value
+  # is less that or equal to zero, we will not wait in Helm
+  timeoutSeconds: 0
+
+  # Custom values that will be passed as values.yaml to the installation
+  values:
+    replicaCount: 2
+
+targetCustomizations:
+  - name: prod
+    helm:
+      values:
+        replicaCount: 2
+    clusterSelector:
+      matchLabels:
+        env: prod
+
+  - name: dev
+    helm:
+      values:
+        replicaCount: 1
+    clusterSelector:
+      matchLabels:
+        env: dev
