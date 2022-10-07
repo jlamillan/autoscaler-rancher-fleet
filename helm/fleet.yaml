@@ -6,10 +6,10 @@ helm:
   releaseName: cluster-autoscaler
 
   # The directory of the chart in the repo.
-  chart: "github.com/twingao/cluster-autoscaler"
+  chart: "charts/cluster-autoscaler"
 
   # An https to a valid Helm repository to download the chart from
-  repo: ""
+  repo: "https://github.com/kubernetes/autoscaler.git"
 
   # Used if repo is set to look up the version of the chart
   version: "master"
