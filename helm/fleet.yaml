@@ -1,4 +1,4 @@
-namespace: kube-system
+defaultNamespace: cluster-autoscaler
 
 # Custom helm options
 helm:
